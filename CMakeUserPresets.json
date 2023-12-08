@@ -1,0 +1,127 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "Qt-Debug",
+      "inherits": "Qt-Default",
+      "binaryDir": "${sourceDir}/out/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_FLAGS": "-DQT_QML_DEBUG"
+      }
+    },
+    {
+      "name": "Qt-Release",
+      "inherits": "Qt-Default",
+      "binaryDir": "${sourceDir}/out/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "hidden": true,
+      "name": "Qt-Default",
+      "inherits": "6.3.2_msvc2019_64",
+      "vendor": {
+        "qt-project.org/Default": {
+          "checksum": "xT/QkRv0XPIX60wJheyy4DcGv8A="
+        }
+      }
+    },
+    {
+      "hidden": true,
+      "name": "5.15.2_msvc2019_64",
+      "inherits": "Qt",
+      "environment": {
+        "QTDIR": "C:/QT/5.15.2/MSVC2019_64"
+      },
+      "architecture": {
+        "strategy": "external",
+        "value": "x64"
+      },
+      "generator": "Ninja",
+      "vendor": {
+        "qt-project.org/Version": {
+          "checksum": "ptcEk6DrMo+x2qNR/kb8KvrnFFM="
+        }
+      }
+    },
+    {
+      "hidden": true,
+      "name": "6.3.2_msvc2019_64",
+      "inherits": "Qt",
+      "environment": {
+        "QTDIR": "C:/QT/6.3.2/MSVC2019_64"
+      },
+      "architecture": {
+        "strategy": "external",
+        "value": "x64"
+      },
+      "generator": "Ninja",
+      "vendor": {
+        "qt-project.org/Version": {
+          "checksum": "y77ncfP9Ak87sa3mNxcCIcAdqZs="
+        }
+      }
+    },
+    {
+      "hidden": true,
+      "name": "msvc2017_64",
+      "inherits": "Qt",
+      "environment": {
+        "QTDIR": "C:/QT/QT5.13.2/5.13.2/MSVC2017_64"
+      },
+      "architecture": {
+        "strategy": "external",
+        "value": "x64"
+      },
+      "generator": "Ninja",
+      "vendor": {
+        "qt-project.org/Version": {
+          "checksum": "C/sHWhQiVVu2ZilUeoE1vq04Elo="
+        }
+      }
+    },
+    {
+      "hidden": true,
+      "name": "qt-5.15.3-static",
+      "inherits": "Qt",
+      "environment": {
+        "QTDIR": "D:/ENV/QT-5.15.3-STATIC-MSVC2019-X86_64"
+      },
+      "architecture": {
+        "strategy": "external",
+        "value": "x64"
+      },
+      "generator": "Ninja",
+      "vendor": {
+        "qt-project.org/Version": {
+          "checksum": "4qxCKlrMGsG6RXtEMe3mebSb31M="
+        }
+      }
+    },
+    {
+      "hidden": true,
+      "name": "qt6_630_static_64",
+      "inherits": "Qt",
+      "environment": {
+        "QTDIR": "C:/USERS/LOVEU/DOWNLOADS/COMPRESSED/QT6_630_STATIC_64"
+      },
+      "architecture": {
+        "strategy": "external",
+        "value": "x64"
+      },
+      "generator": "Ninja",
+      "vendor": {
+        "qt-project.org/Version": {
+          "checksum": "0+nQAjX/3EGllCN2FDdkrtR1Gs4="
+        }
+      }
+    }
+  ],
+  "vendor": {
+    "qt-project.org/Presets": {
+      "checksum": "SMRnEul4lYYU8xl5/9WT9nQ4l14="
+    }
+  }
+}

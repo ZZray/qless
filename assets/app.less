@@ -1,0 +1,17 @@
+@import "./global.less";
+
+QWidget[classes~="bg-primary"],
+QWidget[classes~="bg-secondary"] {
+    &:hover{
+        background-color: green;
+    }
+    QLabel{
+        color:red;
+    }
+
+    background: @primaryColor;
+}
+
+QWidget[classes~="bg-secondary"] {
+    background: @secondaryColor;
+}
