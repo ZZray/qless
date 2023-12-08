@@ -9,8 +9,9 @@
 import qless.buildin;
 namespace ray::qless
 {
-Parser::Parser(const QString& filename)
-    : _filename(filename)
+Parser::Parser( QString filename,  QVariantMap initVariables)
+    : _filename(std::move(filename))
+    , _variables(std::move(initVariables))
 { }
 
 QString Parser::parse()

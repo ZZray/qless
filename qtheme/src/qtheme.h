@@ -23,27 +23,16 @@ namespace ray
 {
 class LIBQLESS_API QTheme
 {
-    using ThemeData = QMap<QString, QString>;
+    using ThemeData = QMap<QString, QVector<QString>>;
 
 public:
-    static QTheme* instance();
     /**
      * \brief 添加主题
      * \param name 主题名
      * \param styleFile 样式表文件路径
-     * \param variableFile 样式表依赖的变量路径
      * \return 文件不存在将会添加失败
      */
     bool addTheme(const QString& name, const QString& styleFile);
-    /**
-     * \brief 附加样式到指定的主题，如果指定的主题不存在则会创建一个
-     * \param name 主题名
-     * \param styleFile 样式表文件路径
-     * \param variableFile 样式表依赖的文件路径
-     * \return 文件不存在将会添加失败
-     */
-    // bool append(const QString& name, const QString& styleFile);
-
     // 设置当前主题
     bool setCurrentTheme(const QString& name);
     // 获取当前主题
@@ -54,16 +43,25 @@ public:
     void reload();
     // 获取主题变量
     QVariant variable(QString name, const QVariant& defaultValue = {}) const;
-    QString primaryColor() const;
-    QString setPrimaryColor(const QString& color);
+    /**
+     * \brief 返回内置变量集合的引用。内置变量会在解析样式表的时候使用
+     * \return 内置变量集合
+     *
+     * \desc 比如，可以在配置文件中存储一个变量@primaryColor，程序运行先读取该变量，设置到内置变量，然后在样式表中使用该变量，
+     * 当修改了配置文件后，调用reload()方法，会重新解析样式表，然后更新样式表, 以达到切换主题样式的目的。
+     */
+    QVariantMap& buildInVariables();
 
-private:
-    QTheme();
+    //
+    // QString primaryColor() const;
+    // QString setPrimaryColor(const QString& color);
+    //
 
 private:
     // 主题
     QString _currentTheme;
     ThemeData _themes;
     QVariantMap _themeVariables;
+    QVariantMap _buildInVariables;
 };
 } // namespace ray

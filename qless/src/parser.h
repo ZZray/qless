@@ -27,7 +27,7 @@ private:
     // 解析的变量
     QVariantMap _variables;
 public:
-    Parser(const QString& filename);
+    Parser(QString filename, QVariantMap initVariables = {});
     QString parse();
     QVariantMap variables() const { return _variables; }
     QVariant variable(QString name, const QVariant& defaultValue) const;
