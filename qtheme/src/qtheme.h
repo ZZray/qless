@@ -12,7 +12,7 @@
 #define LIBQLESS_API __declspec(dllimport)
 #endif
 #else
-#define MYLIBRARY_API // GCC下不需要特殊处理
+#define LIBQLESS_API // GCC下不需要特殊处理
 #endif
 
 #include <QVector>
